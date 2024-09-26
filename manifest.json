@@ -1,16 +1,33 @@
 {
-    "manifest_version": 3,
-    "name": "Docs mörk mörkare mörkast",
-    "version": "1.0",
-    "description": "Mörkt tema till docs.",
-    "permissions": [
-      "activeTab"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["https://docs.advania.se/*"],
-        "css": ["style.css"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "Mörkare Docs",
+  "description": "Mörkt tema till https://docs.advania.se.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Mörker"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.advania.se/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
-  
+}
