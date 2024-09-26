@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Docs mörk mörkare mörkast",
+    "version": "1.0",
+    "description": "Mörkt tema till docs.",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://docs.advania.se/*"],
+        "css": ["style.css"]
+      }
+    ]
+  }
+  
