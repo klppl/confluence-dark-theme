@@ -1,33 +1,19 @@
 {
   "manifest_version": 3,
-  "name": "Mörkare Docs",
-  "description": "Mörkt tema till https://docs.advania.se.",
-  "version": "1.0",
-  "permissions": [
-    "activeTab",
-    "storage",
-    "scripting"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "name": "Docs mörker",
+  "version": "1.2",
+  "description": "Mörkare https://docs.advania.se",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": ["https://docs.advania.se/*"],
   "action": {
+    "default_title": "Mörker!",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    },
-    "default_title": "Mörker"
-  },
-  "content_scripts": [
-    {
-      "matches": ["https://docs.advania.se/*"],
-      "js": ["content.js"]
     }
-  ],
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
   }
 }
